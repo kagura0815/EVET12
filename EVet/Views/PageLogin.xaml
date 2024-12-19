@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageLogin"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title=""
+    BackgroundColor="#212025">
+    <VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Image
+                Margin="10,-80,10,10"
+                HeightRequest="300"
+                Source="logo.png"
+                WidthRequest="300" />
+            <Label
+                Margin="30,-140,0,0"
+                FontSize="12"
+                Text="WELCOME! LET YOUR PETS EXPERIENCE THE THREE STAR."
+                VerticalOptions="Center" />
+            <Label
+                Margin="110,0,0,0"
+                FontSize="12"
+                Text=" ANIMAL CLINIC SERVICES"
+                VerticalOptions="Center" />
+            <StackLayout
+                x:Name="progressLoading"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Transparent"
+                IsVisible="False"
+                VerticalOptions="CenterAndExpand">
+                <ActivityIndicator
+                    x:Name="ai"
+                    Margin="0,0,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    IsRunning="True"
+                    IsVisible="True"
+                    Color="{StaticResource ButtonColor}" />
+                <Label
+                    x:Name="lblorderstate"
+                    Margin="20"
+                    FontFamily="facompa"
+                    FontSize="20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="We're processing your request, please wait..."
+                    TextColor="White" />
+            </StackLayout>
+            <Grid
+                x:Name="nointernet"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="false"
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    RowDefinitions="Auto, Auto, Auto"
+                    RowSpacing="5"
+                    VerticalOptions="CenterAndExpand">
+                    <Label
+                        Grid.Row="1"
+                        Margin="0,30,0,0"
+                        FontSize="Small"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Something went wrong. Please check your internet connection."
+                        TextColor="{StaticResource TextColorGray}"
+                        VerticalOptions="Center" />
+                    <ActivityIndicator
+                        x:Name="Net"
+                        Grid.Row="0"
+                        HorizontalOptions="CenterAndExpand"
+                        IsRunning="True"
+                        IsVisible="True"
+                        Color="{StaticResource ButtonColor}" />
+                    <Button
+                        x:Name="btntryagain"
+                        Grid.Row="2"
+                        Margin="40,0"
+                        BackgroundColor="{StaticResource ButtonColor}"
+                        CornerRadius="30"
+                        Text="Try again"
+                        TextColor="White" />
+                </Grid>
+            </Grid>
+            <ur:TextField
+                x:Name="txtuname"
+                Title="Enter Username"
+                Grid.Column="1"
+                Margin="20,70,20,0"
+                AccentColor="#9BEC00"
+                AllowClear="True"
+                TextColor="White" />
+
+            <ur:TextField
+                x:Name="txtpword"
+                Title="Enter Password"
+                Grid.Column="1"
+                Margin="20"
+                AccentColor="#9BEC00"
+                IsPassword="True"
+                TextColor="White" />
+
+
+            <ur:CheckBox
+                x:Name="showPasswordCheckBox"
+                Margin="25,10,0,0"
+                BoxBackgroundColor="#9BEC00"
+                BoxSizeRequest="25"
+                CheckChanged="showPasswordCheckBox_CheckChanged"
+                Text="Show Password"
+                Color="white" />
+
+            <Button
+                Margin="40,50,40,0"
+                Clicked="btnadd_Clicked"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontFamily="serif"
+                FontSize="15"
+                Text="LOGIN"
+                TextColor="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+
+            <Button
+                Margin="40,10,40,0"
+                BackgroundColor="Transparent"
+                Clicked="Button_Clicked"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontFamily="serif"
+                FontSize="15"
+                Text="CREATE AN ACCOUNT"
+                TextColor="White" />
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

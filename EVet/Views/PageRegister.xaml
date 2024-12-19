@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageRegister"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title="      Create An Account"
+    BackgroundColor="#212025">
+
+    <Frame
+        Margin="20"
+        Padding="10"
+        CornerRadius="10"
+        HasShadow="True"
+        HeightRequest="700"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="350">
+        <ScrollView>
+
+            <VerticalStackLayout
+                Margin="5"
+                Padding="20"
+                BackgroundColor="Transparent"
+                VerticalOptions="Center">
+
+                <Image
+                    Margin="10,-80,10,10"
+                    HeightRequest="300"
+                    Source="logo.png"
+                    WidthRequest="300" />
+
+                <!--<Label
+                    Margin="10,-150,10,10"
+                    FontAttributes="Bold"
+                    FontFamily="serif"
+                    FontSize="30"
+                    Text="CREATE ACCOUNT"
+                    VerticalOptions="Center" />-->
+                <Label
+                    Margin="20,-120,0,10"
+                    FontAttributes="Bold"
+                    FontFamily="serif"
+                    FontSize="13"
+                    Text="User Information"
+                    VerticalOptions="Center" />
+                <ur:TextField
+                    x:Name="txtfname"
+                    Title="Enter FirstName"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    AccentColor="#9BEC00"
+                    AllowClear="True"
+                    TextColor="White" />
+                <ur:TextField
+                    x:Name="txtlname"
+                    Title="Enter LastName"
+                    Grid.Column="1"
+                    Margin="10,10,0,0"
+                    AccentColor="#9BEC00"
+                    AllowClear="True"
+                    TextColor="White" />
+                <ur:TextField
+                    x:Name="txtcnum"
+                    Title="Enter Contact Number"
+                    Grid.Column="1"
+                    Margin="10,10,0,0"
+                    AccentColor="#9BEC00"
+                    AllowClear="True"
+                    Keyboard="Numeric"
+                    TextColor="White" />
+                <ur:TextField
+                    x:Name="txtaddress"
+                    Title="Enter Address"
+                    Grid.Column="1"
+                    Margin="10,10,0,0"
+                    AccentColor="#9BEC00"
+                    AllowClear="True"
+                    TextColor="White" />
+                <ur:TextField
+                    x:Name="txtuser"
+                    Title="Enter UserName"
+                    Grid.Column="1"
+                    Margin="10,10,0,0"
+                    AccentColor="#9BEC00"
+                    AllowClear="True"
+                    TextColor="White" />
+                <ur:TextField
+                    x:Name="txtpword"
+                    Title="Enter Password"
+                    Grid.Column="1"
+                    Margin="10,10,0,0"
+                    AccentColor="#9BEC00"
+                    AllowClear="True"
+                    TextColor="White" />
+                <!--<Label
+                Margin="10,0,0,0"
+                FontSize="10"
+                Text="*The Password must contain atleast 8 letters A-Z,Numbers only."
+                VerticalOptions="Center" />-->
+
+
+
+
+                <Button
+                    x:Name="btnadd"
+                    Margin="10"
+                    Clicked="btnadd_Clicked"
+                    FontAttributes="Bold"
+                    FontFamily="serif"
+                    FontSize="15"
+                    Text="Register">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Offset="0" Color="#9BEC00" />
+                            <GradientStop Offset="1" Color="#059212" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="white"
+                            Opacity="0.3"
+                            Radius="10"
+                            Offset="0,15" />
+                    </Button.Shadow>
+                </Button>
+
+
+                <Button
+                    Margin="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="Button_Clicked_1"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    FontFamily="serif"
+                    FontSize="15"
+                    Text="Already Have An Account"
+                    TextColor="White"
+                    TextTransform="Uppercase" />
+                <CheckBox
+                    x:Name="termsCheckbox"
+                    Grid.Row="14"
+                    Margin="10,10,0,0"
+                    CheckedChanged="termsCheckbox_CheckedChanged"
+                    HorizontalOptions="Start" />
+                <Label
+                    Grid.Row="14"
+                    Margin="50,-50,0,0"
+                    HorizontalOptions="Start"
+                    Text="I hereby agree to abide by ThreeStar CLinic`s terms and conditions and Privacy Policy."
+                    TextColor="White" />
+                <StackLayout Grid.Row="15" Margin="0,-20,0,20">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="Linkuptosite" Tapped="Linkuptosite_Tapped" />
+                    </StackLayout.GestureRecognizers>
+
+                    <Label
+                        Margin="10,20,0,0"
+                        FontSize="10"
+                        Text="Data Privacy Act of 2012 (Republic Act No. 10173)"
+                        TextColor="LightGray" />
+
+                    <Label
+                        Margin="10,0,0,0"
+                        FontSize="8"
+                        Text="Republic of the Philippines. (2012). Republic Act No. 10173. An Act Protecting Individual Personal Information in Information and Communications Systems in the Government and the Private Sector, Creating for this Purpose the National Privacy Commission, and for Other Purposes."
+                        TextColor="LightGray" />
+                    <StackLayout
+                        x:Name="progressLoading"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Transparent"
+                        IsVisible="False">
+                        <ActivityIndicator
+                            x:Name="ai"
+                            Margin="0,0,0,0"
+                            HorizontalOptions="CenterAndExpand"
+                            IsRunning="True"
+                            IsVisible="True"
+                            Color="{StaticResource TextColorAccent}" />
+                        <Label
+                            x:Name="lblorderstate"
+                            Margin="20"
+                            FontFamily="facompa"
+                            FontSize="20"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="We're processing your request, please wait..."
+                            TextColor="White" />
+                    </StackLayout>
+
+                </StackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Frame>
+</ContentPage>

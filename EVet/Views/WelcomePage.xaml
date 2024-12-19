@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.WelcomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    Title="WelcomePage"
+    BackgroundColor="#212025"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="40"
+            HorizontalOptions="FillAndExpand"
+            Spacing="20"
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+                HorizontalOptions="FillAndExpand"
+                RowDefinitions="auto,auto,auto,auto"
+                RowSpacing="0"
+                VerticalOptions="FillAndExpand">
+
+                <Skia:SKLottieView
+                    Grid.Row="0"
+                    Margin="0,40,0,10"
+                    HeightRequest="200"
+                    HorizontalOptions="Center"
+                    RepeatCount="-1"
+                    Source="welcome.json"
+                    WidthRequest="300" />
+
+
+                <StackLayout
+                    x:Name="progressLoading"
+                    Grid.Row="2"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="Transparent"
+                    IsVisible="False"
+                    VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator
+                        x:Name="ai"
+                        Margin="0,0,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        IsRunning="True"
+                        IsVisible="True"
+                        Color="{StaticResource ButtonColor}" />
+                </StackLayout>
+
+                <Label
+                    Grid.Row="1"
+                    Margin="-10,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="19"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Welcome to ThreeStar!"
+                    TextColor="White"
+                    TextTransform="Uppercase"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+
+            <Button
+                x:Name="GetStart"
+                Margin="20,50,20,0"
+                Clicked="GetStart_Clicked"
+                Text="Get Started"
+                TextColor="White"
+                TextTransform="Uppercase"
+                VerticalOptions="End"
+                WidthRequest="200">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+            <Button
+                x:Name="Exitbtn"
+                Margin="20,0,20,20"
+                Clicked="Exitbtn_Clicked"
+                Text="EXIT"
+                TextColor="White"
+                TextTransform="Uppercase"
+                VerticalOptions="End"
+                WidthRequest="200">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

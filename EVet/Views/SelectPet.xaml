@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.SelectPet"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="          Select A Pet">
+    <Grid Background="Transparent" BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+
+        </Grid.RowDefinitions>
+        <VerticalStackLayout>
+
+            <Frame>
+
+                <CollectionView
+                    x:Name="ListPets"
+                    Grid.Row="3"
+                    Margin="30"
+                    HeightRequest="280"
+                    SelectionChanged="ListPets_SelectionChanged"
+                    SelectionMode="Single">
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView Padding="2">
+
+
+
+
+                                <Border
+                                    Margin="0"
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    HeightRequest="160"
+                                    Opacity="0.8"
+                                    StrokeShape="RoundRectangle 40"
+                                    StrokeThickness="0"
+                                    WidthRequest="250">
+                                    <Grid ColumnDefinitions="Auto, *">
+                                        <Line Grid.Column="0" WidthRequest="5" />
+                                        <StackLayout
+                                            Grid.Column="1"
+                                            Margin="15"
+                                            BackgroundColor="Transparent"
+                                            HorizontalOptions="Fill"
+                                            Orientation="Horizontal">
+                                            <Grid ColumnDefinitions="auto,auto">
+                                                <Border
+                                                    Grid.Column="0"
+                                                    Margin="-10,0,10,10"
+                                                    HeightRequest="80"
+                                                    StrokeShape="RoundRectangle 50"
+                                                    VerticalOptions="Center"
+                                                    WidthRequest="80">
+
+                                                    <Image Aspect="AspectFill" Source="{Binding Images}" />
+
+                                                </Border>
+                                                <Grid
+                                                    Grid.Column="1"
+                                                    ColumnDefinitions="Auto, *"
+                                                    RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                                                    RowSpacing="1">
+
+
+
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="Pet Name:"
+                                                        TextColor="black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        FontAttributes="Bold"
+                                                        FontSize="15"
+                                                        LineBreakMode="TailTruncation"
+                                                        Text="{Binding Name}"
+                                                        TextColor="black" />
+                                                    <Label
+                                                        Grid.Row="4"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="Pet Gender:"
+                                                        TextColor="black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="4"
+                                                        Grid.Column="1"
+                                                        FontAttributes="Bold"
+                                                        FontSize="15"
+                                                        LineBreakMode="TailTruncation"
+                                                        Text="{Binding Gender}"
+                                                        TextColor="black" />
+                                                    <Label
+                                                        Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="Pet Type:"
+                                                        TextColor="black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="2"
+                                                        Grid.Column="1"
+                                                        FontAttributes="Bold"
+                                                        FontSize="15"
+                                                        LineBreakMode="TailTruncation"
+                                                        Text="{Binding PetType}"
+                                                        TextColor="black" />
+                                                    <Label
+                                                        Grid.Row="3"
+                                                        Grid.Column="0"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="Pet Breed:"
+                                                        TextColor="black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="3"
+                                                        Grid.Column="1"
+                                                        FontAttributes="Bold"
+                                                        FontSize="15"
+                                                        LineBreakMode="TailTruncation"
+                                                        Text="{Binding Breed}"
+                                                        TextColor="black" />
+
+
+
+
+                                                </Grid>
+
+                                            </Grid>
+
+                                        </StackLayout>
+                                    </Grid>
+                                </Border>
+
+
+
+
+
+                            </ContentView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+            <Button
+                Margin="0,30,0,0"
+                BorderWidth="2"
+                Clicked="addPet"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontFamily="serif"
+                FontSize="10.5"
+                Text="Add Pet"
+                TextColor="white"
+                WidthRequest="170">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

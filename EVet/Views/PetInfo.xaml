@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PetInfo"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title="           Add Pet">
+    <Frame
+        Margin="20"
+        Padding="10"
+        CornerRadius="10"
+        HasShadow="True"
+        HeightRequest="600"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="330">
+        <ScrollView>
+            <VerticalStackLayout>
+
+                <StackLayout Padding="20">
+
+
+                    <Frame
+                        Margin="10,15,0,15"
+                        BackgroundColor="White"
+                        CornerRadius="10"
+                        HeightRequest="100"
+                        WidthRequest="100">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Frame.GestureRecognizers>
+                        <Image
+                            x:Name="mainimage"
+                            Aspect="AspectFill"
+                            Source="addphoto.png" />
+                    </Frame>
+
+
+
+
+                    <StackLayout
+                        x:Name="progressLoading"
+                        Grid.Row="2"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                        VerticalOptions="CenterAndExpand">
+                        <ActivityIndicator
+                            x:Name="ai"
+                            Margin="0,0,0,0"
+                            HorizontalOptions="CenterAndExpand"
+                            IsRunning="True"
+                            IsVisible="True"
+                            Color="{StaticResource ButtonColor}" />
+                    </StackLayout>
+                    <Label
+                        Margin="0,10,0,0"
+                        FontFamily="serif"
+                        Text="Pet Name:" />
+                    <Entry x:Name="txtname" Placeholder="Enter pet name" />
+
+
+                    <Label
+                        Margin="0,10,0,0"
+                        FontFamily="serif"
+                        Text="Pet Gender:" />
+                    <Picker
+                        x:Name="txtgender"
+                        Title="Select Pet Gender"
+                        Margin="0,10,0,0">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Male</x:String>
+                                <x:String>Female</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label
+                        Margin="0,10,0,0"
+                        FontFamily="serif"
+                        Text="Pet Type and Breed:" />
+                    <Picker
+                        x:Name="pettype"
+                        Title="Pet Type"
+                        Margin="0,10,0,0"
+                        SelectedIndexChanged="OnPetTypeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Dog</x:String>
+                                <x:String>Cat</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Picker
+                        x:Name="petbreedDog"
+                        Title="Dog's Breed"
+                        Margin="0,10,0,0"
+                        IsVisible="False">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Akita</x:String>
+                                <x:String>Alaskan Malamute</x:String>
+                                <x:String>American Bully</x:String>
+                                <x:String>Australian Shepherd</x:String>
+                                <x:String>Beagle</x:String>
+                                <x:String>Belgian Malinois</x:String>
+                                <x:String>Border Collie</x:String>
+                                <x:String>Boxer</x:String>
+                                <x:String>Bulldog</x:String>
+                                <x:String>Chihuahua</x:String>
+                                <x:String>Cocker Spaniel</x:String>
+                                <x:String>Dachshund</x:String>
+                                <x:String>Dalmatian</x:String>
+                                <x:String>Doberman Pinscher</x:String>
+                                <x:String>French Bulldog</x:String>
+                                <x:String>German Shepherd</x:String>
+                                <x:String>Golden Retriever</x:String>
+                                <x:String>Great Dane</x:String>
+                                <x:String>Labrador Retriever</x:String>
+                                <x:String>Pekingese</x:String>
+                                <x:String>Pomeranian</x:String>
+                                <x:String>Poodle</x:String>
+                                <x:String>Rottweiler</x:String>
+                                <x:String>Samoyed</x:String>
+                                <x:String>Shih Tzu</x:String>
+                                <x:String>Siberian Husky</x:String>
+                                <x:String>Welsh Corgi</x:String>
+                                <x:String>Yorkshire Terrier</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Picker
+                        x:Name="petbreedCat"
+                        Title="Cat's Breed"
+                        Margin="0,10,0,0"
+                        IsVisible="False">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Puspin (Pusang Pinoy)</x:String>
+                                <x:String>Persian</x:String>
+                                <x:String>Siamese</x:String>
+                                <x:String>Bengal</x:String>
+                                <x:String>Ragdoll</x:String>
+                                <x:String>Maine Coon</x:String>
+                                <x:String>Himalayan</x:String>
+                                <x:String>British Shorthair</x:String>
+                                <x:String>Scottish Fold</x:String>
+                                <x:String>Sphynx</x:String>
+                                <x:String>American Shorthair</x:String>
+                                <x:String>Russian Blue</x:String>
+                                <x:String>Exotic Shorthair</x:String>
+                                <x:String>Burmese</x:String>
+                                <x:String>Turkish Angora</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <!--<ur:DatePickerField
+                x:Name="txtbirthday"
+                Title="Enter Cooking Duration"
+                Margin="0,10,0,0"
+                AccentColor="White"
+                BorderColor="White"
+                FontFamily="serif"
+                Icon="f_duration"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="Center" />-->
+
+
+
+                    <Label
+                        Margin="10,20,0,0"
+                        Text="Weight:"
+                        TextColor="White" />
+                    <Entry
+                        x:Name="weight"
+                        Keyboard="Numeric"
+                        Placeholder="Weight(KG)" />
+
+
+
+
+                    <VerticalStackLayout>
+                        <Button
+                            x:Name="btnadd"
+                            Margin="5,10,0,60"
+                            Clicked="btnadd_Clicked"
+                            FontAttributes="Bold"
+                            FontFamily="serif"
+                            Text="SAVE"
+                            TextColor="{StaticResource White}">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#9BEC00" />
+                                    <GradientStop Offset="1" Color="#059212" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Shadow>
+                                <Shadow
+                                    Brush="White"
+                                    Opacity="0.5"
+                                    Radius="10"
+                                    Offset="0,15" />
+                            </Button.Shadow>
+                        </Button>
+
+                    </VerticalStackLayout>
+                </StackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Frame>
+</ContentPage>

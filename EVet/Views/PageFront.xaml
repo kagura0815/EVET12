@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageFront"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title=""
+    BackgroundColor="#212025"
+    NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Image
+                Margin="0,40,0,0"
+                HeightRequest="300"
+                Source="welcome.png" />
+            <Label
+                Margin="-150,20,0,0"
+                Padding="10"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Welcome to  "
+                TextColor="white" />
+            <Label
+                Margin="155,-47,0,0"
+                Padding="10"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Three Star Animal Clinic!"
+                TextColor="#9BEC00" />
+
+            <StackLayout
+                x:Name="progressLoading"
+                Grid.Row="2"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Transparent"
+                IsVisible="False"
+                VerticalOptions="CenterAndExpand">
+                <ActivityIndicator
+                    x:Name="ai"
+                    Margin="0,0,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    IsRunning="True"
+                    IsVisible="True"
+                    Color="{StaticResource ButtonColor}" />
+            </StackLayout>
+
+            <Button
+                Margin="40,50,40,0"
+                Clicked="btnadd_Clicked"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontFamily="serif"
+                FontSize="15"
+                Text="LOGIN AS PET OWNER"
+                TextColor="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+
+            <Button
+                Margin="40,20,40,0"
+                Clicked="btnadd_Clicked1"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontFamily="serif"
+                FontSize="15"
+                Text="LOGIN AS ADMIN"
+                TextColor="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

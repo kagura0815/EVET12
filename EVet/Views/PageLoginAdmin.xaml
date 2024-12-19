@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageLoginAdmin"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title="">
+    <VerticalStackLayout>
+
+        <Image
+            Margin="10,-40,10,10"
+            HeightRequest="300"
+            Source="logo.png"
+            WidthRequest="300" />
+        <Label
+            Margin="110,-140,0,0"
+            FontFamily="serif"
+            FontSize="40"
+            Text="ADMIN"
+            TextColor="#9BEC00"
+            VerticalOptions="Center" />
+
+
+        <ur:TextField
+            x:Name="AdminUsernameEntry"
+            Title="Enter Username"
+            Grid.Column="1"
+            Margin="20,70,20,0"
+            AccentColor="#9BEC00"
+            AllowClear="True"
+            TextColor="White" />
+
+        <ur:TextField
+            x:Name="AdminPasswordEntry"
+            Title="Enter Password"
+            Grid.Column="1"
+            Margin="20"
+            AccentColor="#9BEC00"
+            IsPassword="True"
+            TextColor="White" />
+        <Label
+            x:Name="AdminStatusLabel"
+            HorizontalOptions="Center"
+            TextColor="Red" />
+
+        <ur:CheckBox
+            x:Name="showPasswordCheckBox1"
+            Margin="25,10,0,0"
+            BoxBackgroundColor="#9BEC00"
+            BoxSizeRequest="25"
+            CheckChanged="showPasswordCheckBox1_CheckChanged"
+            Text="Show Password"
+            Color="white" />
+
+        <Button
+            Margin="40,50,40,0"
+            Clicked="Button_Clicked_1"
+            CornerRadius="20"
+            FontAttributes="Bold"
+            FontFamily="serif"
+            FontSize="15"
+            Text="LOGIN"
+            TextColor="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Offset="0" Color="#9BEC00" />
+                    <GradientStop Offset="1" Color="#059212" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Shadow>
+                <Shadow
+                    Brush="white"
+                    Opacity="0.3"
+                    Radius="10"
+                    Offset="0,15" />
+            </Button.Shadow>
+        </Button>
+
+
+    </VerticalStackLayout>
+</ContentPage>

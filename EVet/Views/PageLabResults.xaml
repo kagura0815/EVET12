@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageLabResults"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PageLabResults"
+    NavigationPage.HasNavigationBar="False">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView
+            Grid.Row="1"
+            Margin="0,0,0,10"
+            HorizontalOptions="FillAndExpand">
+            <VerticalStackLayout Padding="10">
+
+                <Label
+                    Margin="0,20,0,20"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Lab Results Form"
+                    TextColor="Black" />
+
+                <!--  Lab Results Input Section  -->
+                <StackLayout
+                    Margin="0,0,0,20"
+                    Padding="10"
+                    BackgroundColor="White">
+
+                    <Label
+                        FontSize="18"
+                        Text="Pet Name"
+                        TextColor="Black" />
+                    <Entry
+                        x:Name="PetNameEntry"
+                        Placeholder="Enter pet name"
+                        TextColor="Black" />
+
+                    <Label
+                        FontSize="18"
+                        Text="Owner Name"
+                        TextColor="Black" />
+                    <Entry
+                        x:Name="OwnerNameEntry"
+                        Placeholder="Enter owner name"
+                        TextColor="Black" />
+
+                    <Label
+                        FontSize="18"
+                        Text="Date"
+                        TextColor="Black" />
+                    <DatePicker x:Name="DatePicker" TextColor="Black" />
+
+                    <Label
+                        FontSize="18"
+                        Text="Time"
+                        TextColor="Black" />
+                    <TimePicker x:Name="TimePicker" TextColor="Black" />
+
+                    <Label
+                        FontSize="18"
+                        Text="Type of Test"
+                        TextColor="Black" />
+                    <Picker
+                        x:Name="TestNamePicker"
+                        Title="Select Test"
+                        TitleColor="Black">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Complete Blood Count (CBC)</x:String>
+                                <x:String>Stool Test</x:String>
+                                <x:String>Urinalysis</x:String>
+                                <x:String>Ultrasound</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label
+                        FontSize="18"
+                        Text="Test Result"
+                        TextColor="Black" />
+                    <Entry
+                        x:Name="ResultEntry"
+                        Placeholder="Enter result"
+                        TextColor="Black" />
+
+                    <Label
+                        FontSize="18"
+                        Text="Range"
+                        TextColor="Black" />
+                    <Entry
+                        x:Name="RangeEntry"
+                        Placeholder="Enter result"
+                        TextColor="Black" />
+
+                    <Button
+                        Margin="0,20,0,10"
+                        BackgroundColor="#059212"
+                        Clicked="ImageButton_Clicked"
+                        Text="Submit Results"
+                        TextColor="White" />
+                </StackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <StackLayout Grid.Row="2" BackgroundColor="#059212">
+            <Grid
+                Margin="20,10,20,10"
+                ColumnSpacing="100"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+                <ImageButton
+                    Margin="-150,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="OnPetProfileClicked"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    Source="home.png" />
+                <ImageButton
+                    Margin="150,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="OnAppointmentsClicked"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    Source="appt.png" />
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

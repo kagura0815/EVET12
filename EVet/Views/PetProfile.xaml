@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PetProfile"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EVet.ViewModels"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title=""
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <local:PetProfileViewModel />
+        <!--  Ensure you have the correct namespace for your ViewModel  -->
+    </ContentPage.BindingContext>
+    <Grid Background="Transparent" BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+
+
+        </Grid.RowDefinitions>
+        <VerticalStackLayout Grid.Row="0">
+
+            <Frame
+                Margin="0,0,0,0"
+                BackgroundColor="Transparent"
+                HeightRequest="60"
+                WidthRequest="500">
+                <Button
+                    Margin="-195,-6,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="selectPet"
+                    FontSize="18"
+                    Text="Select a Pet"
+                    TextColor="White"
+                    TextTransform="Uppercase" />
+            </Frame>
+            <!--<Frame
+                Margin="-250,-50,0,15"
+                BackgroundColor="White"
+                CornerRadius="10"
+                HeightRequest="40"
+                WidthRequest="40">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Frame.GestureRecognizers>
+                <Image
+                    x:Name="mainimage"
+                    Margin="0,15,0,15"
+                    Aspect="Fill"
+                    HeightRequest="40"
+                    Source="addphoto.png"
+                    WidthRequest="40" />
+            </Frame>-->
+
+
+
+
+
+
+            <BoxView Margin="0,-10,0,0" StyleClass="Divider" />
+            <!--  Pet Information Section  -->
+
+            <StackLayout Padding="10">
+                <Frame
+                    Margin="0,0,0,0"
+                    BackgroundColor="White"
+                    CornerRadius="10"
+                    HeightRequest="300"
+                    WidthRequest="340">
+                    <Grid ColumnDefinitions="Auto, *">
+                        <Line Grid.Column="0" WidthRequest="5" />
+                        <StackLayout
+                            Grid.Column="1"
+                            Margin="15"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Fill"
+                            Orientation="Horizontal">
+                            <Grid ColumnDefinitions="auto,auto">
+                                <Border
+                                    Grid.Column="0"
+                                    Margin="90,-130,10,10"
+                                    HeightRequest="100"
+                                    StrokeShape="RoundRectangle 50"
+                                    VerticalOptions="Center"
+                                    WidthRequest="100">
+
+                                    <Image
+                                        x:Name="petImage"
+                                        Aspect="AspectFill"
+                                        Source="{Binding Images}" />
+
+
+                                </Border>
+                                <Grid
+                                    Grid.Column="1"
+                                    Margin="-190,110,0,0"
+                                    ColumnDefinitions="Auto, *"
+                                    RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                                    RowSpacing="1">
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalOptions="Start"
+                                        Text="Pet Name:"
+                                        TextColor="black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        x:Name="petNameLabel"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Name}"
+                                        TextColor="black" />
+
+
+
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalOptions="Start"
+                                        Text="Pet Gender:"
+                                        TextColor="black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        x:Name="petGenderLabel"
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Gender}"
+                                        TextColor="black" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalOptions="Start"
+                                        Text="Pet Type:"
+                                        TextColor="black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        x:Name="petTypeLabel"
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding PetType}"
+                                        TextColor="black" />
+                                    <Label
+                                        Grid.Row="4"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalOptions="Start"
+                                        Text="Pet Breed:"
+                                        TextColor="black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        x:Name="petBreedLabel"
+                                        Grid.Row="4"
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Breed}"
+                                        TextColor="black" />
+                                    <Label
+                                        Grid.Row="5"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalOptions="Start"
+                                        Text="Pet Weight:"
+                                        TextColor="black"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        x:Name="petWeightLabel"
+                                        Grid.Row="5"
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Weight}"
+                                        TextColor="black" />
+
+
+
+
+                                </Grid>
+
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <!--<ScrollView
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,-80,0,10"
+                HorizontalOptions="FillAndExpand">
+                <CollectionView
+                    x:Name="listViewProducts"
+                    SelectionChanged="listproducts_SelectionChanged"
+                    SelectionMode="Single">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+            -->
+            <!--  Your item template here  -->
+            <!--  For example, you can display product name and description  -->
+            <!--
+                            <VerticalStackLayout
+                                Margin="20"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <ScrollView>
+                                    <Frame
+                                        Padding="10"
+                                        BackgroundColor="#212025"
+                                        BorderColor="White"
+                                        CornerRadius="0"
+                                        VerticalOptions="Start">
+
+                                        <ContentView.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                x:Name="PreviewTheItem"
+                                                CommandParameter="{Binding .}"
+                                                Tapped="PreviewTheItem_Tapped" />
+                                        </ContentView.GestureRecognizers>
+                                        <Grid RowSpacing="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+            -->
+            <!--  INSERT DATA  -->
+            <!--
+
+                                        </Grid>
+                                    </Frame>
+                                </ScrollView>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>-->
+
+            <StackLayout
+                Grid.Row="2"
+                Margin="20,325,20,10"
+                BackgroundColor="#059212"
+                WidthRequest="360">
+                <Grid
+                    Margin="20,10,20,10"
+                    ColumnSpacing="100"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <ImageButton
+                        Margin="-150,0,0,0"
+                        BackgroundColor="Transparent"
+                        Clicked="OnHomePageClick"
+                        HeightRequest="20"
+                        HorizontalOptions="Start"
+                        Source="home.png" />
+
+                    <ImageButton
+                        Margin="150,0,0,0"
+                        BackgroundColor="Transparent"
+                        Clicked="OnAppointmentsClicked"
+                        HeightRequest="25"
+                        HorizontalOptions="Start"
+                        Source="appt.png" />
+                </Grid>
+            </StackLayout>
+
+            <!--<ScrollView>
+            <StackLayout Padding="10">
+                <Label x:Name="petNameLabel" Text="Pet Name" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    HorizontalOptions="Center"
+                    Text="{Binding SelectedPet.Name}" />
+                <Image
+                    x:Name="petImage"
+                    HeightRequest="100"
+                    WidthRequest="100" />
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    HorizontalOptions="Center"
+                    Source="{Binding SelectedPet.ImageSource}" />
+                <Label x:Name="petGenderLabel" Text="Pet Gender" />
+                <Label
+                    FontAttributes="Bold"
+                    Text="Gender:"
+                    TextColor="Black" />
+                <Label Text="{Binding SelectedPet.Gender}" TextColor="Black" />
+
+                <Label x:Name="petWeightLabel" Text="Pet Weight" />
+                <Label
+                    FontAttributes="Bold"
+                    Text="Weight:"
+                    TextColor="Black" />
+                <Label Text="{Binding SelectedPet.Weight}" TextColor="Black" />
+
+                <Label x:Name="petBreedLabel" Text="Pet Breed" />
+                <Label
+                    FontAttributes="Bold"
+                    Text="Breed:"
+                    TextColor="Black" />
+                <Label Text="{Binding SelectedPet.Breed}" TextColor="Black" />
+            </StackLayout>
+        </ScrollView>-->
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

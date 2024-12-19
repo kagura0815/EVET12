@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.Dashboard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+    Title="Dashboard"
+    BackgroundColor="Black">
+    <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
+        <StackLayout>
+            <BoxView
+                Margin="0,0,0,0"
+                HeightRequest="70"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="500"
+                Color="DarkSlateGray" />
+        </StackLayout>
+
+        <StackLayout>
+
+
+            <ImageButton
+                Margin="-350,-20,0,0"
+                HeightRequest="150"
+                Source="logo.png"
+                WidthRequest="150" />
+
+            <ImageButton
+                Margin="140,-110,0,0"
+                HeightRequest="40"
+                Source="settings.png"
+                WidthRequest="40" />
+
+
+
+
+
+
+
+        </StackLayout>
+        <StackLayout>
+            <BoxView
+                Margin="0,695,0,0"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="500"
+                Color="DarkSlateGray" />
+        </StackLayout>
+        <StackLayout>
+
+            <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
+                <ImageButton
+                    Margin="20,675,0,0"
+                    HeightRequest="30"
+                    Source="paw.png"
+                    WidthRequest="40" />
+                <Label
+                    Margin="25,725,0,0"
+                    FontSize="Small"
+                    Text="Pet Profile" />
+            </Grid>
+
+        </StackLayout>
+        <StackLayout>
+
+            <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
+                <ImageButton
+                    Margin="150,675,0,0"
+                    HeightRequest="30"
+                    Source="services.png"
+                    WidthRequest="30" />
+                <Label Margin="160,725,0,0" Text="Services" />
+            </Grid>
+
+        </StackLayout>
+        <StackLayout>
+
+            <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
+                <ImageButton
+                    Margin="270,675,0,0"
+                    HeightRequest="30"
+                    Source="appt.png"
+                    WidthRequest="40" />
+                <Label Margin="270,725,0,0" Text="Services" />
+            </Grid>
+
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

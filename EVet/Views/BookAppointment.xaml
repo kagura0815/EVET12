@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.BookAppointment"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="    Book Appointment">
+    <Frame
+        Margin="20"
+        Padding="10"
+        CornerRadius="10"
+        HasShadow="True"
+        HeightRequest="600"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="330">
+        <ScrollView>
+            <VerticalStackLayout>
+
+                <StackLayout Padding="20">
+                    <Label Margin="0,10,0,0" Text="Pet Name" />
+                    <Entry x:Name="PetNameEntry" Placeholder="Enter pet name" />
+
+                    <Label Margin="0,10,0,0" Text="Owner Name" />
+                    <Entry x:Name="OwnerNameEntry" Placeholder="Enter your name" />
+                    <Label Margin="0,10,0,0" Text="Pet Type and Breed" />
+                    <Picker
+                        x:Name="ptype"
+                        Title="Pet Type"
+                        Margin="0,10,0,0"
+                        SelectedIndexChanged="OnPetTypeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Dog</x:String>
+                                <x:String>Cat</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Picker
+                        x:Name="pbreedDog"
+                        Title="Dog's Breed"
+                        Margin="0,10,0,0"
+                        IsVisible="False">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Akita</x:String>
+                                <x:String>Alaskan Malamute</x:String>
+                                <x:String>American Bully</x:String>
+                                <x:String>Australian Shepherd</x:String>
+                                <x:String>Beagle</x:String>
+                                <x:String>Belgian Malinois</x:String>
+                                <x:String>Border Collie</x:String>
+                                <x:String>Boxer</x:String>
+                                <x:String>Bulldog</x:String>
+                                <x:String>Chihuahua</x:String>
+                                <x:String>Cocker Spaniel</x:String>
+                                <x:String>Dachshund</x:String>
+                                <x:String>Dalmatian</x:String>
+                                <x:String>Doberman Pinscher</x:String>
+                                <x:String>French Bulldog</x:String>
+                                <x:String>German Shepherd</x:String>
+                                <x:String>Golden Retriever</x:String>
+                                <x:String>Great Dane</x:String>
+                                <x:String>Labrador Retriever</x:String>
+                                <x:String>Pekingese</x:String>
+                                <x:String>Pomeranian</x:String>
+                                <x:String>Poodle</x:String>
+                                <x:String>Rottweiler</x:String>
+                                <x:String>Samoyed</x:String>
+                                <x:String>Shih Tzu</x:String>
+                                <x:String>Siberian Husky</x:String>
+                                <x:String>Welsh Corgi</x:String>
+                                <x:String>Yorkshire Terrier</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Picker
+                        x:Name="pbreedCat"
+                        Title="Cat's Breed"
+                        Margin="0,10,0,0"
+                        IsVisible="False">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Puspin (Pusang Pinoy)</x:String>
+                                <x:String>Persian</x:String>
+                                <x:String>Siamese</x:String>
+                                <x:String>Bengal</x:String>
+                                <x:String>Ragdoll</x:String>
+                                <x:String>Maine Coon</x:String>
+                                <x:String>Himalayan</x:String>
+                                <x:String>British Shorthair</x:String>
+                                <x:String>Scottish Fold</x:String>
+                                <x:String>Sphynx</x:String>
+                                <x:String>American Shorthair</x:String>
+                                <x:String>Russian Blue</x:String>
+                                <x:String>Exotic Shorthair</x:String>
+                                <x:String>Burmese</x:String>
+                                <x:String>Turkish Angora</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Text="Select a Service" />
+                    <Picker x:Name="servicePicker" Title="Select a Service">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Castrating</x:String>
+                                <x:String>Vaccination</x:String>
+                                <x:String>Grooming</x:String>
+
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label Margin="0,10,0,0" Text="Appointment Date" />
+                    <DatePicker
+                        x:Name="AppointmentDatePicker"
+                        Margin="0,10,0,0"
+                        DateSelected="OnDateSelected" />
+                    <Label Margin="0,10,0,0" Text="Appointment Time" />
+                    <TimePicker x:Name="AppointmentTimePicker" Margin="0,10,0,0" />
+                    <Label
+                        x:Name="UnavailableTimesLabel"
+                        FontSize="16"
+                        Text=""
+                        TextColor="Red" />
+                    <Button
+                        Margin="5,20,0,60"
+                        Clicked="OnBookAppointmentClicked"
+                        FontAttributes="Bold"
+                        FontFamily="serif"
+                        Text="BOOK APPOINTMENT"
+                        TextColor="{StaticResource White}">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Offset="0" Color="#9BEC00" />
+                                <GradientStop Offset="1" Color="#059212" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Shadow>
+                            <Shadow
+                                Brush="White"
+                                Opacity="0.5"
+                                Radius="10"
+                                Offset="0,15" />
+                        </Button.Shadow>
+                    </Button>
+
+                    <ProgressBar
+                        x:Name="BookingProgressBar"
+                        Margin="0,105,0,0"
+                        IsVisible="False" />
+                </StackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Frame>
+</ContentPage>

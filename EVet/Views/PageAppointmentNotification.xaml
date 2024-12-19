@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageAppointmentNotification"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PageAppointmentNotification">
+    <Frame
+        Margin="20"
+        Padding="20"
+        CornerRadius="10"
+        HasShadow="True"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+        <VerticalStackLayout>
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="Appointment Notification" />
+
+            <Label
+                Margin="0,10,0,20"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="You have a new appointment scheduled!" />
+
+            <Label FontAttributes="Bold" Text="Pet Name:" />
+            <Label x:Name="PetNameLabel" FontSize="16" />
+
+            <Label FontAttributes="Bold" Text="Owner Name:" />
+            <Label x:Name="OwnerNameLabel" FontSize="16" />
+
+            <Label FontAttributes="Bold" Text="Appointment Date:" />
+            <Label x:Name="AppointmentDateLabel" FontSize="16" />
+
+            <Label FontAttributes="Bold" Text="Appointment Time:" />
+            <Label x:Name="AppointmentTimeLabel" FontSize="16" />
+
+            <Label FontAttributes="Bold" Text="Status:" />
+            <Label x:Name="StatusLabel" FontSize="16" />
+
+            <HorizontalStackLayout Margin="0,20,0,0" HorizontalOptions="Center">
+                <Button
+                    Margin="5"
+                    BackgroundColor="#4CAF50"
+                    Clicked="OnConfirmClicked"
+                    Text="Confirm"
+                    TextColor="White" />
+                <Button
+                    Margin="5"
+                    BackgroundColor="#F44336"
+                    Clicked="OnCancelClicked"
+                    Text="Cancel"
+                    TextColor="White" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Frame>
+</ContentPage>

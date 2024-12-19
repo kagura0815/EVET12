@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EVet.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:EVet.Views"
+    NavigationPage.HasBackButton="False">
+
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:PageHome}"
+            Icon="services.png" />
+
+        <ShellContent
+            Title="Pet Profile"
+            ContentTemplate="{DataTemplate pages:PetProfile}"
+            Icon="paw.png" />
+
+        <!--<ShellContent
+            Title="Services"
+            ContentTemplate="{DataTemplate pages:Services}"
+            Icon="services.png" />-->
+
+
+    </TabBar>
+</Shell>

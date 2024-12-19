@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVet.Views.PageSettings"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PageSettings">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!--  Other UI elements can go here  -->
+            <VerticalStackLayout>
+                <Frame
+                    Margin="0,-5,0,0"
+                    BackgroundColor="#191919"
+                    BorderColor="DimGray"
+                    CornerRadius="30"
+                    HeightRequest="70"
+                    WidthRequest="500" />
+            </VerticalStackLayout>
+
+
+
+            <VerticalStackLayout>
+
+
+
+                <!--<Border
+                    Grid.Column="0"
+                    Margin="30,-200,10,10"
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    StrokeShape="RoundRectangle 50"
+                    VerticalOptions="Center"
+                    WidthRequest="80">
+                    <Image Aspect="Fill" Source="jing.jpg" />
+                </Border>-->
+                <StackLayout>
+                    <StackLayout.Effects />
+                    <Label
+                        Margin="300,-50,0,0"
+                        FontSize="24"
+                        HeightRequest="405"
+                        Text="Settings"
+                        TextColor="White"
+                        WidthRequest="400" />
+
+                </StackLayout>
+
+            </VerticalStackLayout>
+            <Button
+                Margin="310,-410,40,0"
+                BackgroundColor="Transparent"
+                BorderColor="Gray"
+                BorderWidth="0"
+                Clicked="Button_Clicked"
+                CornerRadius="90"
+                FontSize="30"
+                HeightRequest="50"
+                Text="X"
+                TextColor="white"
+                WidthRequest="70" />
+            <!--<VerticalStackLayout>
+                <Frame
+                    Margin="0,-315,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="160"
+                    WidthRequest="400" />
+
+            </VerticalStackLayout>-->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

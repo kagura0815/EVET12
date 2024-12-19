@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="EVet.Pages.PetDetails"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <VerticalStackLayout Padding="20" VerticalOptions="Center">
+        <Label FontSize="20" Text="Enter Your Pet's Details" />
+        <Entry x:Name="PetNameEntry" Placeholder="Pet's Name" />
+        <Picker x:Name="ptype" Title="Pet Type">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Dog</x:String>
+                    <x:String>Cat</x:String>
+                    <x:String>Bird</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <StackLayout>
+
+            <Picker x:Name="pbreed" Title="Pet`s Breed">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Akita</x:String>
+                        <x:String>Alaskan Malamute</x:String>
+                        <x:String>American Bully</x:String>
+                        <x:String>Australian Shepherd</x:String>
+                        <x:String>Beagle</x:String>
+                        <x:String>Belgian Malinois</x:String>
+                        <x:String>Border Collie</x:String>
+                        <x:String>Boxer</x:String>
+                        <x:String>Bulldog</x:String>
+                        <x:String>Chihuahua</x:String>
+                        <x:String>Cocker Spaniel</x:String>
+                        <x:String>Dachshund</x:String>
+                        <x:String>Dalmatian</x:String>
+                        <x:String>Doberman Pinscher</x:String>
+                        <x:String>French Bulldog</x:String>
+                        <x:String>German Shepherd</x:String>
+                        <x:String>Golden Retriever</x:String>
+                        <x:String>Great Dane</x:String>
+                        <x:String>Labrador Retriever</x:String>
+                        <x:String>Pekingese</x:String>
+                        <x:String>Pomeranian</x:String>
+                        <x:String>Poodle</x:String>
+                        <x:String>Rottweiler</x:String>
+                        <x:String>Samoyed</x:String>
+                        <x:String>Shih Tzu</x:String>
+                        <x:String>Siberian Husky</x:String>
+                        <x:String>Welsh Corgi</x:String>
+                        <x:String>Yorkshire Terrier</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        </StackLayout>
+        <Entry
+            x:Name="age"
+            Keyboard="Numeric"
+            Placeholder="Pet's Age" />
+    </VerticalStackLayout>
+</ContentView>
